@@ -1,13 +1,18 @@
-import './App.css';
+import React from 'react';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
-      <h1>Let's builder tinder clone</h1>
 
       {/* header */}
+      <Header/>
+
       {/* tinder cards */}
       {/* buttons */}
+
+      {/* chats screen */}
+      {/* individual chat screen */}
     </div>
   );
 }
