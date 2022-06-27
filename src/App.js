@@ -10,8 +10,11 @@ function App() {
       {/* header */}
       <Header />
       <Routes>
+
         <Route path="/" element={<Home/>}/>
+
         <Route path="/chat" element={<Chat/>}/>
+        
       </Routes>
       {/* tinder cards */}
       {/* buttons */}

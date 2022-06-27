@@ -1,8 +1,11 @@
 import React from 'react'
+import TinderCards from './components/TinderCards'
 
 function Home() {
   return (
-    <div>Home</div>
+    <>
+      <TinderCards/>
+    </>
   )
 }
 
