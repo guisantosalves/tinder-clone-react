@@ -12,33 +12,35 @@ function TinderCards() {
     const qu = query(collection(db, "people"))
     
     onSnapshot(qu, (results)=>{
-        console.log(results.docs)
+        
+        setPeople(results.docs.map((item, index)=>({
+            id: item.id,
+            data: item.data(),
+        })))
+        
     })
 
   }, []);
 
   return (
     <div>
-
+      <div className="tinderCard__container">
+        {people.map((item, index) => (
+          <TinderCard
+            className="swipe"
+            key={item.data.nome}
+            preventSwipe={["up", "down"]}
+          >
+            <div
+              className="card"
+              style={{ backgroundImage: `url(${item.data.url})` }}
+            >
+              <h3>{item.name}</h3>
+            </div>
+          </TinderCard>
+        ))}
+      </div>
     </div>
-    // <div>
-    //   <div className="tinderCard__container">
-    //     {people.map((item, index) => (
-    //       <TinderCard
-    //         className="swipe"
-    //         key={item.name}
-    //         preventSwipe={["up", "down"]}
-    //       >
-    //         <div
-    //           className="card"
-    //           style={{ backgroundImage: `url(${item.url})` }}
-    //         >
-    //           <h3>{item.name}</h3>
-    //         </div>
-    //       </TinderCard>
-    //     ))}
-    //   </div>
-    // </div>
   );
 }
 
