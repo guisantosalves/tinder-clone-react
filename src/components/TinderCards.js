@@ -35,7 +35,7 @@ function TinderCards() {
               className="card"
               style={{ backgroundImage: `url(${item.data.url})` }}
             >
-              <h3>{item.data.name}</h3>
+              <h3>{item.data.nome}</h3>
             </div>
           </TinderCard>
         ))}

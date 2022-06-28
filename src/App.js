@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import Chat from "./Chat";
+import UniqChat from "./UniqChat";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
 
         <Route path="/chat" element={<Chat/>}/>
         
+        <Route path="/chat/:person" element={<UniqChat/>}/>
       </Routes>
 
     </div>
