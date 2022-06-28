@@ -4,6 +4,8 @@ import { Avatar } from "@mui/material";
 import "./components/css/UniqChat.css";
 
 function UniqChat() {
+    const [input, setInput] = useState("");
+
   const [messages, setMessages] = useState([
     {
       nome: "Eru",
@@ -21,6 +23,17 @@ function UniqChat() {
       message: "I love you too <3",
     },
   ]);
+
+  const handleSubmit = (e) => {
+
+    //doesn't leave the page reload
+    e.preventDefault();
+
+    //...messages -> keep all the things that the messages has inside
+    setMessages([...messages, {message: input}])
+
+    setInput("")
+  }
 
   return (
     <>
@@ -47,6 +60,18 @@ function UniqChat() {
           )
 
         ))}
+
+            <form className="chatScreen__input">
+                <input 
+                    className="chatScreen__inputField" 
+                    placeholder="type a message...." 
+                    type="text"
+                    onChange={(e)=>setInput(e.target.value)}
+                    value={input}
+                />
+                <button type="submit" onClick={handleSubmit}>SEND</button>
+            </form>
+
       </div>
     </>
   );
