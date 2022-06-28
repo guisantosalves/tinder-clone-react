@@ -7,8 +7,7 @@ import Chat from "./Chat";
 function App() {
   return (
     <div className="App">
-      {/* header */}
-      <Header />
+
       <Routes>
 
         <Route path="/" element={<Home/>}/>
@@ -16,11 +15,7 @@ function App() {
         <Route path="/chat" element={<Chat/>}/>
         
       </Routes>
-      {/* tinder cards */}
-      {/* buttons */}
 
-      {/* chats screen */}
-      {/* individual chat screen */}
     </div>
   );
 }

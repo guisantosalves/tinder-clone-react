@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TinderCard from "react-tinder-card";
 import "./css/TinderCards.css";
-import {collection, query, orderBy, onSnapshot} from "firebase/firestore";
+import {collection, query, onSnapshot} from "firebase/firestore";
 import {db} from "../firebase";
 
 function TinderCards() {
@@ -20,7 +20,7 @@ function TinderCards() {
         
     })
 
-  }, [people]);
+  }, []);
 
   return (
     <div>
@@ -35,7 +35,7 @@ function TinderCards() {
               className="card"
               style={{ backgroundImage: `url(${item.data.url})` }}
             >
-              <h3>{item.data.nome}</h3>
+              <h3>{item.data.name}</h3>
             </div>
           </TinderCard>
         ))}
